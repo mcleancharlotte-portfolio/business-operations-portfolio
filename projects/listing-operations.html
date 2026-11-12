@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listing Operations & Transaction Playbook</title>
+<style>
+:root{--ink:#20252d;--muted:#667085;--line:#e6e8ec;--paper:#fff;--bg:#f4f6f8;--accent:#274c5e;--accent2:#d9e8e9;--good:#24745b;--warn:#9b6a22;--soft:#f8fafb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+header{background:#1e3945;color:white;padding:48px max(24px,calc((100% - 1160px)/2)) 42px}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:700;color:#b8d0d4}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:12px 0;max-width:780px}
+header p{color:#d7e2e5;max-width:720px;margin:0;font-size:16px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+nav a{color:#eaf2f3;text-decoration:none;border:1px solid #65808a;padding:8px 13px;border-radius:30px;font-size:13px}
+main{max-width:1160px;margin:30px auto;padding:0 22px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0;box-shadow:0 4px 18px #1e293b08}
+h2{font-size:24px;margin:0 0 8px}h3{font-size:17px;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.metric{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px}
+.metric b{display:block;font-size:26px;color:var(--accent)}
+.metric span{color:var(--muted);font-size:13px}
+.stage-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}
+.stage{padding:12px 8px;text-align:center;border-radius:10px;background:#eef3f4;color:#34525d;font-size:12px;font-weight:700}
+.stage small{display:block;font-weight:500;color:#637781;margin-top:4px}
+.demo-layout{display:grid;grid-template-columns:245px 1fr;gap:18px}
+.sidebar{display:flex;flex-direction:column;gap:7px}
+.stage-btn{border:1px solid var(--line);background:#fff;text-align:left;padding:12px;border-radius:10px;cursor:pointer;color:var(--ink)}
+.stage-btn.active{background:#eaf2f3;border-color:#8baeb4;color:#173c49;font-weight:700}
+.stage-btn small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.panel{border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}
+.panel-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.pill{font-size:11px;padding:4px 9px;border-radius:20px;background:#edf3f4;color:#36545d;font-weight:700}
+.progress{height:8px;background:#edf0f2;border-radius:10px;overflow:hidden;margin:12px 0 18px}
+.progress div{height:100%;background:#4e8589;width:0;transition:width .2s}
+.task{display:flex;gap:11px;padding:12px 0;border-bottom:1px solid #edf0f2;align-items:flex-start}
+.task:last-child{border:0}.task input{margin-top:5px;accent-color:#356c70;width:16px;height:16px}
+.task label{flex:1;cursor:pointer}.task strong{display:block;font-size:14px;font-weight:600}
+.task em{display:block;color:var(--muted);font-style:normal;font-size:12px;margin-top:3px}
+.task.done strong{text-decoration:line-through;color:#879198}
+
+.task-list-scroll{max-height:430px;overflow-y:auto;overscroll-behavior:contain;padding-right:10px;scrollbar-width:thin;scrollbar-color:#78939a #edf1f2}
+.task-list-scroll::-webkit-scrollbar{width:9px}
+.task-list-scroll::-webkit-scrollbar-track{background:#edf1f2;border-radius:12px}
+.task-list-scroll::-webkit-scrollbar-thumb{background:#78939a;border-radius:12px;border:2px solid #edf1f2}
+.task-list-scroll::-webkit-scrollbar-thumb:hover{background:#4e6f78}
+.task-list-scroll:focus{outline:2px solid #9dc3c5;outline-offset:3px;border-radius:8px}
+
+textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+textarea{min-height:76px;resize:vertical}
+.field{margin-top:16px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:#46515c}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+button{border:0;background:var(--accent);color:white;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:650}
+button.secondary{background:#edf2f3;color:#294b56}
+button:focus,a:focus,input:focus,textarea:focus{outline:3px solid #9dc3c5;outline-offset:2px}
+.checklist{columns:2;column-gap:28px}.checkitem{break-inside:avoid;padding:8px 0;border-bottom:1px solid #edf0f2;font-size:13px}
+
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:22px}
+@media(max-width:760px){.grid,.case-grid{grid-template-columns:1fr}.demo-layout{grid-template-columns:1fr}.stage-grid{grid-template-columns:repeat(2,1fr)}.checklist{columns:1}section{padding:20px}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>html,body,button,input,textarea,select{font-family:'Google Sans Flex','Google Sans',Arial,sans-serif;}</style>
+<style id="google-sans-global">
+html, body, body * {
+  font-family: 'Google Sans Flex', 'Google Sans', Arial, sans-serif !important;
+}
+</style>
+
+</head>
+<body>
+<header>
+ <div class="eyebrow">Operations portfolio · Workflow design</div>
+ <h1>Listing Operations &<br>Transaction Playbook</h1>
+ <p>A structured workflow for coordinating a property listing from pre-listing preparation through active marketing, accepted offer, pending milestones, closing, and post-close follow-through.</p>
+ <nav><a href="#overview">Overview</a><a href="#demo">Interactive workflow</a><a href="#case">Process case study</a></nav>
+</header>
+<main>
+<section id="overview">
+ <h2>From checklist to coordinated workflow</h2>
+ <p class="sub">A stage-based operating playbook that makes the work visible: what needs to happen, who owns it, when it is due, and what supporting information must be captured.</p>
+ <div class="grid">
+  <div class="metric"><b>6</b><span>Core workflow stages represented</span></div>
+  <div class="metric"><b>2</b><span>Primary role groups in the source: LM / TC, plus Agent-owned actions</span></div>
+  <div class="metric"><b>1</b><span>Cancellation procedure for a buyer cancellation on an officially under-contract listing</span></div>
+ </div>
+ <div class="stage-grid">
+  <div class="stage">01 · Pre-listing<small>Prepare the listing</small></div><div class="stage">02 · Active listing<small>Launch & market</small></div><div class="stage">03 · Accepted offer<small>Open transaction</small></div><div class="stage">04 · Pending<small>Manage contingencies</small></div><div class="stage">05 · Closing<small>Complete & follow up</small></div>
+ </div>
+ </section>
+<section id="demo">
+ <h2>Interactive workflow demo</h2>
+ <p class="sub">Select a stage, work through its tasks, and record notes. Progress is calculated from the checklist items in this demo and remains local to this browser session.</p>
+ <div class="demo-layout">
+  <div class="sidebar" id="stageNav"></div>
+  <div class="panel">
+   <div class="panel-top"><div><span class="pill" id="ownerPill">LM</span><h3 id="stageTitle" style="margin-top:9px">Pre-listing</h3><div id="stageDesc" class="sub" style="margin:0">Prepare the listing before it goes live.</div></div><div style="min-width:110px;text-align:right"><strong id="count">0 / 0</strong><div style="font-size:11px;color:#667085">tasks complete</div></div></div>
+   <div class="progress"><div id="bar"></div></div>
+   <div id="taskList" class="task-list-scroll" role="region" aria-label="Workflow task checklist" tabindex="0"></div>
+   <div class="field"><label for="stageNotes">Stage notes / handoff details</label><textarea id="stageNotes" placeholder="Capture follow-ups, exceptions, or information needed by the next owner..."></textarea></div>
+   <div class="actions"><button id="resetStage" class="secondary">Reset this stage</button><button id="nextStage">Next stage →</button></div>
+  </div>
+ </div>
+</section>
+<section id="case">
+ <h2>Process case study</h2>
+ <p class="sub">A practical operations artifact built around the source playbook’s actual sequence, role assignments, timing cues, document checks, and exception handling.</p>
+ <div class="case-grid">
+  <div><h3>Workflow architecture</h3><p>The process is organized around the lifecycle of a listing and its transaction. Each stage pairs an agenda of operational actions with status, notes, key dates, and supporting checklists.</p><ul><li>Pre-listing setup and listing readiness</li><li>Live-date actions and recurring weekly marketing-table reviews</li><li>Accepted-offer intake, stakeholder introductions, and transaction setup</li><li>Inspection and contingency follow-through</li><li>Closing preparation, settlement, status updates, and post-close outreach</li></ul></div>
+  <div><h3>Operational controls embedded in the source</h3><ul><li>Role ownership is indicated by LM, TC, or Agent.</li><li>Timeline cues include Live Date, Week 1–9, after contingency removal, and countdowns to closing.</li><li>Document checklists distinguish required items from conditional items.</li><li>Notes call out special handling, such as not sending a Personal Property Agreement to the lender unless the agent directs otherwise.</li><li>Transaction dates, included/excluded items, and an addenda/amendment tracker support coordination.</li></ul></div>
+ </div>
+ <h3 style="margin-top:22px">Reference checklists from the playbook</h3>
+ <p class="sub">Key document groups shown in the source (conditional items remain conditional).</p>
+ <div class="case-grid">
+  <div><h3>Listing documents</h3><div class="checklist" id="listingDocs"></div></div>
+  <div><h3>Transaction documents</h3><div class="checklist" id="transactionDocs"></div></div>
+ </div>
+ <h3 style="margin-top:24px">Buyer cancellation procedure</h3>
+ <p class="sub">For officially under-contract listings, the source specifies the following sequence.</p>
+ <div id="cancelList"></div>
+</section>
+</main>
+<footer>Portfolio demonstration · Workflow content based on the uploaded Listing Playbook (5 pages)</footer>
+<script>
+const stages=[
+{title:"Pre-listing",owner:"LM",desc:"Prepare the listing and confirm the information and materials needed before launch.",tasks:[
+["Prepare listing paperwork"],["Update Appointment Listing section of Lead Report Tracker"],["Prepare Seller Estimated Proceeds Sheet","Check in with Agent on details to input"],["Send introduction text to seller(s)"],["Add sellers to CRM"],["Add “Seller 2026” tag"],["Receive listing updates from Agent"],["Receive executed listing paperwork"],["Confirm whether there is a lockbox at the property"],["Ask for lockbox details"],["Send Congratulations (Intro 1) email","Include utilities form"],["Order photos"],["Order sign"],["Create incomplete listing in MLS"],["Upload photos to MLS"],["Upload disclosures to MLS"],["Update incomplete listing in MLS"],["Switch listing to Active"],["Enter listing in CRM"],["Order HOA documents","Source note: should not be 90 days older than the PA date"],["Check for open permits"],["Call municipality for open permits"],["Update Team Status Report"]
+]},
+{title:"Active listing & marketing",owner:"LM / Agent",desc:"Coordinate launch-day actions and recurring marketing reviews.",tasks:[
+["Initiate Marketing Checklist"],["Start group messaging channel with sellers and Admin Team"],["Update showing instructions"],["Send Congratulations Intro 2 on Live Date","Timeline: Live Date"],["Call seller on Live Date","Owner: Agent"],["Add “Active Listing” tag in CRM","Timeline: Live Date"],["Update Team Status Report","Timeline: Live Date"],["Confirm with Agent whether a saved search is needed","Not applicable for vacant land listings"],["Set daily reminders to review showings in saved search","Not applicable for vacant land listings"],["Set up weekly reports"],["Create Single Listing Landing Page"],["Add landing page to Linktree profile"],["Review Listing Marketing Time Table","Live Date, then review in Weeks 1–9"]
+]},
+{title:"Accepted offer",owner:"TC",desc:"Open the transaction, notify stakeholders, log dates, and coordinate inspections and documents.",tasks:[
+["Receive offer"],["Receive preapproval letter"],["Have Agent call clients to review contract terms"],["Record accepted offer"],["Change MLS status","Status depends on contingency: Active for inspection or inspection contingency; Active for sale-of-another-property contingency. Verify with Agent if unsure."],["Log dates under Transaction Dates Tracker"],["Create Sales folder in Dropbox"],["Save fully executed under-contract documents and Under Contract MLS sheet"],["Send Accepted Offer – Next Steps email to sellers","Include FE PA"],["Send introduction email to buyer agent","Include listing title information and where to send/process earnest money"],["Gather contact information for title companies, seller, buyer agent, and lender"],["Prepare Closing Worksheet"],["Send intro email to listing title","Use the transaction email subject convention in the source"],["Send intro email to buyer’s lender","Include FE PA and Closing Worksheet. Do not send Personal Property Agreement unless Agent states otherwise."],["Send intro email to buyer’s title","Include FE PA"],["Review documents for blank or needed items"],["Change “Active Listing” tag to “Under Contract” in CRM"],["Log included and excluded items"],["Enter closing date in Google Calendar"],["Update Team Status Report"],["Set up weekly transaction update and reminders"],["Coordinate home, well, and septic inspections as applicable"],["Contact association for Resale Disclosure Certificate and notify seller"],["Track earnest money and update CRM Pipeline"],["Receive resale disclosure certificate from HOA and send association documents to buyer agent"],["Follow up on inspection, water test, and septic compliance results"],["Update Pending section of Lead Report Tracker"],["Track removal of sale-of-buyer’s-property contingency if applicable"]
+]},
+{title:"Pending",owner:"TC",desc:"Track contingency removals, status changes, compliance submissions, and closing countdowns.",tasks:[
+["Confirm home inspection contingency removed"],["Confirm well inspection contingency removed"],["Confirm septic inspection contingency removed"],["Change MLS status to Pending","Timeline: after inspection or contingency completed"],["Post under-contract update on social media","Timeline: after inspection or contingency completed"],["Update CRM Pipeline","Timeline: after inspection or contingency completed"],["Submit listing documents for compliance to CRM","Timeline: after inspection or contingency completed"],["Submit offer documents for compliance to CRM","Timeline: after inspection or contingency completed"],["Submit commission details","Timeline: after inspection or contingency completed"],["Follow up on appraisal with buyer’s Agent","Timeline: 3 days after inspection"],["Inform seller of appraisal result"],["Review CRM compliance","Timeline: 2 weeks before closing"],["Check pre-signing schedule with title company","Timeline: 2 weeks before closing"],["Check closing schedule with title company","Timeline: 2 weeks before closing"],["Update closing in Google Calendar with time and location","Timeline: 2 weeks before closing"],["Send Closing Soon email to seller","Advise seller to leave keys and garage door opener on kitchen counter"],["Send home utilities to buyer agent","Timeline: 1 week before closing; include key/lockbox instructions"],["Order home warranty if applicable","Timeline: 1 week before closing; confirm type with Agent if seller is obtaining"],["Get home warranty invoice if applicable","Timeline: 1 week before closing; coordinate with seller or cooperating Agent"],["Send home warranty invoice to title","Timeline: 1 week before closing"],["Request and review preliminary settlement from listing title","Timeline: 1 week before closing"],["Have Agent review preliminary settlement with sellers"],["Prepare Closing Week Update","Timeline: 4 days before closing"],["Check key instructions with Listing Agent","Timeline: 4 days before closing"],["Check with title company for pending items","Timeline: 4 days before closing"],["Get Clear to Close from buyer’s Agent/lender","Timeline: 4 days before closing"],["Confirm final walkthrough has been scheduled","Timeline: 4 days before closing"],["Send Closing Week Update to Agent"],["Order sign removal"],["Have Agent call sellers about buyer’s final walkthrough","Timeline: 2 days before closing"],["Order lockbox and sold sign rider removal","Timeline: 2 days before closing"]
+]},
+{title:"Closing & post-close",owner:"TC / Agent",desc:"Complete the transaction record, update systems, communicate with stakeholders, and follow through after closing.",tasks:[
+["Receive fully executed settlement from closer","Timeline: Closing Day"],["Submit fully executed settlement to CRM"],["Change MLS status to SOLD"],["Change HUB status to SOLD"],["Get sellers’ new address"],["Update seller address in CRM","If seller is also buying with the team, use the property they are purchasing as the new address"],["Change “Under Contract” tag to “SOLD”; add DTD2 tag"],["Send thank-you email to sellers"],["Send thank-you email to buyer’s Agent"],["Send thank-you email to lender"],["Send thank-you email to title company"],["Complete post-close marketing"],["Turn in commission check"],["Get Agent Commission Details Form"],["Update Team Status Report"],["Update CRM Pipeline"],["Have Agent call sellers","Timeline: 3 days after closing; add a 10-minute calendar notification"],["Mail closing gift","Timeline: within 3 days after closing"],["Follow up with seller on thank-you email and review request"],["Follow up with buyer’s Agent on thank-you email and review request"],["Follow up with lender on thank-you email and review request"],["Follow up with title company on thank-you email and review request"]
+]}
+];
+let active=0;const state=stages.map(s=>s.tasks.map(()=>false));const notes=stages.map(()=> "");
+const nav=document.getElementById("stageNav");
+stages.forEach((s,i)=>{let b=document.createElement("button");b.className="stage-btn";b.innerHTML=`${String(i+1).padStart(2,"0")} · ${s.title}<small>${s.owner}</small>`;b.onclick=()=>show(i);nav.appendChild(b)});
+function show(i){active=i;document.querySelectorAll(".stage-btn").forEach((b,j)=>b.classList.toggle("active",j===i));let s=stages[i],done=state[i].filter(Boolean).length;document.getElementById("stageTitle").textContent=s.title;document.getElementById("stageDesc").textContent=s.desc;document.getElementById("ownerPill").textContent=s.owner;document.getElementById("count").textContent=`${done} / ${s.tasks.length}`;document.getElementById("bar").style.width=(done/s.tasks.length*100)+"%";document.getElementById("stageNotes").value=notes[i];let list=document.getElementById("taskList");list.innerHTML="";s.tasks.forEach((t,j)=>{let row=document.createElement("div");row.className="task"+(state[i][j]?" done":"");let cb=document.createElement("input");cb.type="checkbox";cb.checked=state[i][j];cb.onchange=()=>{state[i][j]=cb.checked;show(i)};let label=document.createElement("label");let strong=document.createElement("strong");strong.textContent=t[0];label.appendChild(strong);if(t[1]){let em=document.createElement("em");em.textContent=t[1];label.appendChild(em)}label.onclick=e=>{if(e.target===label)cb.click()};row.append(cb,label);list.appendChild(row)});}
+document.getElementById("stageNotes").oninput=e=>notes[active]=e.target.value;
+document.getElementById("resetStage").onclick=()=>{state[active]=state[active].map(()=>false);notes[active]="";show(active)};
+document.getElementById("nextStage").onclick=()=>show((active+1)%stages.length);
+const listingDocs=["Game Plan","Exclusive Right to Sell Listing","Listing Input Form","Coming Soon Authorization (if applicable)","Showing Information","Wire Fraud","KW Disclosure Form","Agency Relationship","Seller’s Property Condition Disclosures","Seller’s Disclosure Alternatives (if applicable)","Well Disclosure Statement (if applicable)","Subsurface Sewage System Disclosure Statement (if applicable)","Location Map (if applicable)","Tax Record","Listing Utilities Form","Lead Based Paint Addendum"];
+const transactionDocs=["Preapproval Letter","Purchase Agreement","Counter Offer","Arbitrations Agreement","Buyer Signed Seller’s Disclosure","Earnest Money Receipt","Copy of Earnest Money Check","Well/Septic (if applicable)","Truth in Housing (if applicable)","MLS Change Form (if applicable)","Lead Based Paint Disclosure (if built before 1978)","Listing Utilities Form","Cooperating Broker Agreement","Condo/Townhome Addendum (if applicable)","CIC Resale Disclosure Certificate (if applicable)","Sale Contingency (if applicable)","AS-IS Addendum (if applicable)","Contract for Deed (if applicable)","Short Sale Contingency (if applicable)","Short Sale Approval Letter (if applicable)","Personal Property Agreement (if applicable)","UC MLS Printout / PDF","Closing Worksheet","Preliminary Settlement","Final Settlement","Commission Check"];
+function fill(id,items){let el=document.getElementById(id);items.forEach(x=>{let d=document.createElement("div");d.className="checkitem";d.textContent="□  "+x;el.appendChild(d)})}
+fill("listingDocs",listingDocs);fill("transactionDocs",transactionDocs);
+const cancels=["Inform Listing Agent via text.","Send Buyer Cancellation to sellers for signatures.","Change MLS status back to Active.","Delete old Multiple Offer Notice and update MLS remarks if needed.","Upload Buyer Cancellation document to Dropbox; update playbook notes on cancellation if necessary.","Label Sales folder CANCELLED.","Update file cabinet or team records.","If short sale, send a copy to Short Sale Negotiator and advise that the listing Agent is working on a new offer.","If not short sale, send “Back to Active” to the whole team and attach the Active MLS sheet.","On UC Checklist – Seller, highlight client row gray and move it under Closed/Cancelled.","Delete client log entries from Deadlines, Docs Needed, Included/Excluded, and Addendum tabs."];
+let cl=document.getElementById("cancelList");cancels.forEach(x=>{let d=document.createElement("div");d.className="task";let c=document.createElement("input");c.type="checkbox";let l=document.createElement("label");l.textContent=x;d.append(c,l);cl.appendChild(d)});
+show(0);
+</script>
+</body></html>

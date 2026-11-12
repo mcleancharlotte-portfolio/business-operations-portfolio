@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Ads Launch & Review Playbook</title>
+<style>
+:root{--ink:#20252d;--muted:#667085;--line:#e6e8ec;--paper:#fff;--bg:#f4f6f8;--accent:#274c5e;--soft:#f7fafb;--teal:#4e8589}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+header{background:#1e3945;color:white;padding:48px max(24px,calc((100% - 1160px)/2)) 42px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:700;color:#b8d0d4}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.08;margin:12px 0;max-width:820px}header p{color:#d7e2e5;max-width:740px;margin:0;font-size:16px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}nav a{color:#eaf2f3;text-decoration:none;border:1px solid #65808a;padding:8px 13px;border-radius:30px;font-size:13px}
+main{max-width:1160px;margin:30px auto;padding:0 22px}section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px;margin:18px 0;box-shadow:0 4px 18px #1e293b08}
+h2{font-size:24px;margin:0 0 8px}h3{font-size:17px;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px}.metric b{display:block;font-size:26px;color:var(--accent)}.metric span{color:var(--muted);font-size:13px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}.flow div{padding:12px 8px;text-align:center;border-radius:10px;background:#eef3f4;color:#34525d;font-size:12px;font-weight:700}.flow small{display:block;font-weight:500;color:#637781;margin-top:4px}
+.layout{display:grid;grid-template-columns:245px 1fr;gap:18px}.sidebar{display:flex;flex-direction:column;gap:7px}.stepbtn{border:1px solid var(--line);background:white;text-align:left;padding:12px;border-radius:10px;cursor:pointer;color:var(--ink)}.stepbtn.active{background:#eaf2f3;border-color:#8baeb4;color:#173c49;font-weight:700}.stepbtn small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.panel{border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.pill{font-size:11px;padding:4px 9px;border-radius:20px;background:#edf3f4;color:#36545d;font-weight:700}
+.progress{height:8px;background:#edf0f2;border-radius:10px;overflow:hidden;margin:12px 0 18px}.progress div{height:100%;background:var(--teal);width:0;transition:width .2s}
+.task{display:flex;gap:11px;padding:12px 0;border-bottom:1px solid #edf0f2;align-items:flex-start}.task:last-child{border:0}.task input{margin-top:5px;accent-color:#356c70;width:16px;height:16px}.task label{flex:1;cursor:pointer}.task strong{display:block;font-size:14px;font-weight:600}.task em{display:block;color:var(--muted);font-style:normal;font-size:12px;margin-top:3px}.task.done strong{text-decoration:line-through;color:#879198}
+.field{margin-top:16px}.field label{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:#46515c}textarea{width:100%;min-height:76px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}button{border:0;background:var(--accent);color:white;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:650}button.secondary{background:#edf2f3;color:#294b56}
+.note{background:#fff8e9;border-left:3px solid #d5a54d;padding:12px 14px;border-radius:0 8px 8px 0;font-size:13px;margin:14px 0}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:16px}.case ul{padding-left:19px}.case li{margin:6px 0}.refs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.ref{border:1px solid var(--line);border-radius:10px;padding:15px}.ref p{font-size:13px;color:var(--muted);margin:5px 0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:22px}
+@media(max-width:760px){.grid,.case,.refs{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}section{padding:20px}}
+.ref ol{padding-left:19px;margin:8px 0}.ref li{font-size:13px;margin:5px 0}#leadmagnet .flow{grid-template-columns:repeat(5,1fr)}
+</style><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>html,body,button,input,textarea,select{font-family:'Google Sans Flex','Google Sans',Arial,sans-serif;}</style>
+<style id="google-sans-global">
+html, body, body * {
+  font-family: 'Google Sans Flex', 'Google Sans', Arial, sans-serif !important;
+}
+</style>
+
+</head><body>
+<header><div class="eyebrow">Operations portfolio · Campaign execution</div>
+<h1>Meta Ads Launch &<br>Performance Review Playbook</h1>
+<p>A repeatable Facebook and Instagram advertising workflow for driving traffic to a property-specific lead capture landing page, publishing the campaign, and reviewing early performance.</p>
+<nav><a href="#overview">Overview</a><a href="#demo">Interactive checklist</a><a href="#case">Process case study</a><a href="#leadmagnet">Lead magnet system</a></nav></header>
+<main>
+<section id="overview"><h2>From campaign instructions to a repeatable launch process</h2>
+<p class="sub">The playbook organizes campaign preparation, Ads Manager setup, audience and creative configuration, publishing, and scheduled performance reviews.</p>
+<div class="grid">
+<div class="metric"><b>9</b><span>Numbered setup steps present in the source (numbering jumps from Step 7 to Step 9)</span></div>
+<div class="metric"><b>3</b><span>Early review checkpoints: Day 1, Day 3, and Day 7</span></div>
+<div class="metric"><b>2</b><span>Named channels: Facebook and Instagram</span></div>
+</div>
+<div class="flow"><div>Prepare<small>Landing page & MLS PDF</small></div><div>Configure<small>Campaign & ad set</small></div><div>Build<small>Audience & creative</small></div><div>Publish<small>Review & approval</small></div><div>Optimize<small>Day 1 / 3 / 7</small></div></div>
+<div class="note">The source playbook describes a landing-page lead approach. It states that the temporary setup optimizes for landing-page views rather than conversions, and includes a future upgrade path once the Pixel is ready.</div>
+</section>
+<section id="demo"><h2>Interactive campaign checklist</h2><p class="sub">Move through the playbook steps, tick off tasks, and capture campaign-specific notes. Progress is calculated locally in this browser session.</p>
+<div class="layout"><div class="sidebar" id="stepNav"></div><div class="panel">
+<div class="top"><div><span class="pill" id="stepPill">Preparation</span><h3 id="stepTitle" style="margin-top:9px">Prepare the listing assets</h3><div id="stepDesc" class="sub" style="margin:0"></div></div><div style="text-align:right;min-width:110px"><strong id="count">0 / 0</strong><div style="font-size:11px;color:#667085">tasks complete</div></div></div>
+<div class="progress"><div id="bar"></div></div><div id="taskList"></div>
+<div class="field"><label for="notes">Campaign notes / decisions</label><textarea id="notes" placeholder="Record the property, landing page URL, approvals, questions, or exceptions..."></textarea></div>
+<div class="actions"><button class="secondary" id="reset">Reset this step</button><button id="next">Next step →</button></div>
+</div></div></section>
+<section id="case"><h2>Process case study</h2><p class="sub">A source-grounded interpretation of the six-page Facebook & Instagram Ads Playbook (TBJT January 2026).</p>
+<div class="case">
+<div><h3>Workflow design</h3><ul><li>Prepares a property landing page and lead capture page in KW Command Site.</li><li>Uses a PDF copy of the MLS as input to Ads Optimizer GPT for ad creative details.</li><li>Sets up an Auction campaign in Ads Manager, then configures budget, destination, performance goal, audience, placements, extensions, and creative.</li><li>Publishes the ad, waits for approval, and reviews performance at Day 1, Day 3, and Day 7.</li></ul></div>
+<div><h3>Operational checkpoints</h3><ul><li>Confirm the correct property-specific lead capture landing page is attached.</li><li>Keep the ad focused on one landing page; Site Links are switched off in the source workflow.</li><li>Use one image or one video, and confirm the form is visible and working.</li><li>Use the GPT Meta Ads Performance Review by pasting a screenshot of performance numbers and adjusting as advised.</li><li>Retain a future migration path to a Sales objective and Lead event when the Pixel is ready.</li></ul></div>
+</div>
+<h3 style="margin-top:22px">Source-specific configuration reference</h3>
+<div class="refs">
+<div class="ref"><strong>Campaign level</strong><p>Buying type: Auction. Objective: Traffic or Engagement in the setup section. Budget strategy: Ad set budget. Special Ad Category: Housing.</p></div>
+<div class="ref"><strong>Ad set level</strong><p>Website destination for traffic and leads; maximize landing page views; leave cost per result blank; $1/day and 10-day schedule in Step 4.</p></div>
+<div class="ref"><strong>Audience & delivery</strong><p>Step 5: four cities, 50-mile radius, remove statewide targeting; age 18–65+, all genders; detailed targeting blank or minimal. Advantage+ Placements.</p></div>
+<div class="ref"><strong>Creative & review</strong><p>One image or video; copy primary text, headline, and description from Ads Optimizer prompt; CTA Learn More or Get More Info. Review Day 1, 3, and 7.</p></div>
+</div>
+<div class="note"><strong>Scope:</strong> This is a portfolio demonstration of the supplied instructions, not a live Meta integration. It does not publish ads, validate compliance, connect to Ads Manager, access campaign analytics, or claim campaign performance results.</div>
+</section>
+<section id="leadmagnet">
+<h2>Lead magnet & nurture system</h2>
+<p class="sub">The companion playbook extends campaign execution beyond the ad itself: educational content creates context, lead magnets capture interest, CRM tagging routes contacts into nurture, and replies trigger a handoff to an agent.</p>
+<div class="grid">
+<div class="metric"><b>4</b><span>Lead pillars: Buyers, Sellers, Senior Relocation, New Construction</span></div>
+<div class="metric"><b>2 weeks</b><span>Repeatable content rotation stated in the source</span></div>
+<div class="metric"><b>4</b><span>Audience-specific drip campaign flows documented</span></div>
+</div>
+<h3 style="margin-top:22px">Lead magnet content cycle</h3>
+<p class="sub">The source's page 1–2 schedule sets out an educational-content sequence followed by a 10-day lead magnet ad run.</p>
+<div class="flow">
+<div>Day 1<small>Question-format blog, website page & social post</small></div>
+<div>Day 3<small>Answer blog, website page & social post</small></div>
+<div>Day 5<small>Run lead magnet landing-page ad for 10 days</small></div>
+<div>Capture<small>Review leads, add to tracker & KW Command</small></div>
+<div>Nurture<small>Tag, run drip & review performance</small></div>
+</div>
+<div class="note">The playbook says each lead pillar follows the same repeatable framework, rotating every two weeks. It also calls for reviewing leads from the eight-week campaign.</div>
+<h3 style="margin-top:24px">Interactive lead magnet execution checklist</h3>
+<p class="sub">Select a lead pillar and complete the associated content, campaign, capture, and nurture actions.</p>
+<div class="field"><label for="pillarSelect">Lead pillar</label>
+<select id="pillarSelect" style="width:100%;max-width:420px;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit">
+<option value="Buyers">Buyers (First-Time & Move-Up)</option>
+<option value="Sellers">Sellers</option>
+<option value="Senior Relocation">Senior Relocation (SRS)</option>
+<option value="New Construction">New Construction</option>
+</select></div>
+<div class="layout" style="margin-top:16px">
+<div class="sidebar" id="magnetNav"></div>
+<div class="panel">
+<div class="top"><div><span class="pill" id="magnetPill">Content</span><h3 id="magnetTitle" style="margin-top:9px">Day 1 content</h3><div id="magnetDesc" class="sub" style="margin:0"></div></div><div style="text-align:right;min-width:110px"><strong id="magnetCount">0 / 0</strong><div style="font-size:11px;color:#667085">tasks complete</div></div></div>
+<div class="progress"><div id="magnetBar"></div></div>
+<div id="magnetTasks"></div>
+<div class="field"><label for="magnetNotes">Pillar-specific notes</label><textarea id="magnetNotes" placeholder="Record the guide, landing page, assigned owner, tag, or follow-up details..."></textarea></div>
+<div class="actions"><button class="secondary" id="magnetReset">Reset this stage</button><button id="magnetNext">Next stage →</button></div>
+</div></div>
+<h3 style="margin-top:26px">Lead capture handoff</h3>
+<div class="case">
+<div><h3>Capture & routing</h3><ul>
+<li>Review captured leads.</li><li>Add leads to the tracker.</li><li>Add leads to KW Command.</li><li>Apply the appropriate tag.</li><li>Review whether the drip campaign is working.</li>
+</ul></div>
+<div><h3>System tools named in the playbook</h3><ul>
+<li>Lead Magnet Blog & Socials GPT — content for creatives.</li><li>KW Command Agent Sites — website pages.</li><li>Ads Optimizer GPT — ad setup support.</li><li>Tracker and KW Command — lead recording and CRM routing.</li><li>Audience-specific drip campaigns — ongoing education and pipeline movement.</li>
+</ul></div>
+</div>
+<h3 style="margin-top:24px">Audience-specific drip campaign flows</h3>
+<p class="sub">These schedules are transcribed from pages 3–4 of the Lead Magnet Playbook. Each flow exits when a reply is received and endorses the lead to an agent.</p>
+<div class="refs" id="dripFlows">
+<div class="ref"><strong>Buyers</strong><p><b>Goal:</b> Educate buyers, reduce uncertainty, and identify timeline.</p><ol><li>Day 0: Deliver buyer guide.</li><li>Day 2: Soft check-in; if reply, exit drip and endorse to agent.</li><li>Day 6: Education on costs, financing, or timing.</li><li>Day 12: Clarify common buyer misunderstandings.</li><li>Day 18: Low-pressure invitation to ask questions or request a plan.</li><li>Day 25: Move to Buyer Lead Pipeline.</li></ol></div>
+<div class="ref"><strong>Sellers</strong><p><b>Goal:</b> Build pricing confidence and identify seller motivation.</p><ol><li>Day 0: Deliver seller guide.</li><li>Day 3: Check-in to identify seller stage; if reply, exit and endorse.</li><li>Day 7: Market insight on why some homes do not sell.</li><li>Day 14: Mistake avoidance around pricing and preparation.</li><li>Day 21: Offer a price range or consultation.</li><li>Day 28: Move to Seller Lead Pipeline.</li></ol></div>
+<div class="ref"><strong>Senior Relocation (SRS)</strong><p><b>Goal:</b> Reduce overwhelm and build trust through education and reassurance.</p><ol><li>Day 0: Deliver senior planning guide.</li><li>Day 3: Gentle check-in; if reply, exit and endorse.</li><li>Day 8: Timing and family coordination.</li><li>Day 15: Emotional and logistical concerns.</li><li>Day 22: No-pressure support conversation invitation.</li><li>Day 30: Move to Senior Lead Pipeline.</li></ol></div>
+<div class="ref"><strong>New Construction</strong><p><b>Goal:</b> Provide cost clarity and guide build decisions.</p><ol><li>Day 0: Deliver new construction guide.</li><li>Day 3: Check-in on common build surprises; if reply, exit and endorse.</li><li>Day 7: Cost clarity on upgrades and site costs.</li><li>Day 14: Build-versus-buy comparison.</li><li>Day 21: Offer a walkthrough of options.</li><li>Day 30: Move to New Construction Lead Pipeline.</li></ol></div>
+</div>
+<div class="note"><strong>Source fidelity:</strong> The lead magnet document specifies a two-week rotation, an eight-week campaign review, and four separate drip flows. It does not provide measured lead conversion, response, or pipeline results; none are claimed here.</div>
+</section>
+
+</main><footer>Portfolio demonstration · Based on the uploaded Facebook & Instagram Ads Playbook (TBJT January 2026)</footer>
+<script>
+const steps=[
+{title:"Prepare the listing assets",tag:"Preparation",desc:"Create the property landing pages and prepare the MLS source file.",tasks:[
+["Create a landing page through KW Command Site"],["Create a lead capture landing page through KW Command Site"],["Download a PDF copy of the MLS"],["Attach the MLS PDF to Ads Optimizer GPT in ChatGPT","The GPT reflects the ad creative details needed later."]
+]},
+{title:"Open Ads Manager",tag:"Step 1",desc:"Start a new campaign in Meta Ads Manager.",tasks:[
+["Go to business.facebook.com"],["Open Ads Manager"],["Click Create"]
+]},
+{title:"Choose campaign objective",tag:"Step 2",desc:"Select the buying type and campaign objective described in the playbook.",tasks:[
+["Set Buying Type to Auction"],["Select Traffic or Engagement","The source says this allows use of your own landing page, avoids conversion events being greyed out, and works without a fully installed Pixel."]
+]},
+{title:"Configure campaign settings",tag:"Step 3",desc:"Name the campaign, choose budget strategy, and select the special ad category.",tasks:[
+["Use the campaign naming format: Property Address | Lead Capture | MMM YYYY","Example in source: TBD Polk St | Lead Capture | Jan 2026"],["Set budget strategy to Ad set budget"],["Set Special Ad Category to Housing"],["Click Next"]
+]},
+{title:"Configure the ad set",tag:"Step 4",desc:"Choose the destination, performance goal, budget, schedule, and advanced settings.",tasks:[
+["Choose Calls when the goal is to get leads"],["Choose Website when the goal is traffic and leads"],["Attach the corresponding property lead capture landing page","Double-check that the correct property-specific page is linked."],["Set performance goal to Maximize number of landing page views"],["Leave cost per result blank"],["Set daily budget to $1/day per Step 4","The source conflicts with its $2/day note and quick checklist; confirm the intended amount."],["Set schedule to run for 10 days"],["Turn Value Rules OFF"],["Set Attribution Model to Standard"],["Set Delivery Type to Standard"],["Turn Dynamic Creative OFF"]
+]},
+{title:"Set the audience",tag:"Step 5",desc:"Apply location, demographic, and detailed targeting settings.",tasks:[
+["Add ONLY 4 cities per Step 5","Quick checklist later says 2 cities; confirm which instruction is current."],["Adjust Meta’s automatically applied 15-mile radius to 50 miles"],["Remove statewide targeting"],["Set age range to 18–65+"],["Set gender to All"],["Leave detailed targeting blank or minimal"],["Treat a Narrow audience warning as expected per the source note","The source note refers to $2/day."]
+]},
+{title:"Choose placements",tag:"Step 6",desc:"Use Meta's automated placement option.",tasks:[
+["Select Advantage+ Placements"]
+]},
+{title:"Configure ad extensions",tag:"Step 7",desc:"Keep the destination focused on the intended landing page.",tasks:[
+["Turn Site Links OFF","The source says this keeps focus on one landing page and prevents traffic from being split."]
+]},
+{title:"Build the ad creative",tag:"Step 9",desc:"Choose account identity, creative format, copy, call to action, and destination URL.",tasks:[
+["Select the Facebook Page"],["Select the Instagram account"],["Use one image OR one video"],["Copy Primary Text from Ads Optimizer prompt"],["Copy Headline from Ads Optimizer prompt"],["Copy Description from Ads Optimizer prompt"],["Choose Learn More OR Get More Info"],["Paste the landing page URL"],["Confirm the landing page form is visible and working"]
+]},
+{title:"Review and publish",tag:"Step 10",desc:"Complete a final settings review and submit the ad.",tasks:[
+["Review all campaign, ad set, audience, placement, and creative settings"],["Click Publish"],["Wait for ad approval"]
+]},
+{title:"Review performance",tag:"Review",desc:"Use the performance review GPT and revisit the campaign at the checkpoints in the source.",tasks:[
+["Review performance on Day 1"],["Review performance on Day 3"],["Review performance on Day 7"],["Paste a screenshot of performance numbers into GPT Meta Ads Performance Review"],["Adjust campaign as advised"]
+]},
+{title:"Future upgrade when Pixel is ready",tag:"Upgrade path",desc:"The source's proposed future transition from landing-page-view optimization to lead conversion optimization.",tasks:[
+["Duplicate the campaign"],["Change objective to Sales"],["Set conversion location to Website"],["Set conversion event to Lead"],["Let the upgraded campaign run for 5–7 days"]
+]}
+];
+let active=0;const done=steps.map(s=>s.tasks.map(()=>false));const notes=steps.map(()=>{});
+const nav=document.getElementById("stepNav");
+steps.forEach((s,i)=>{let b=document.createElement("button");b.className="stepbtn";b.innerHTML=`${String(i+1).padStart(2,"0")} · ${s.title}<small>${s.tag}</small>`;b.onclick=()=>render(i);nav.appendChild(b)});
+function render(i){active=i;document.querySelectorAll(".stepbtn").forEach((b,j)=>b.classList.toggle("active",i===j));let s=steps[i],n=done[i].filter(Boolean).length;document.getElementById("stepTitle").textContent=s.title;document.getElementById("stepPill").textContent=s.tag;document.getElementById("stepDesc").textContent=s.desc;document.getElementById("count").textContent=`${n} / ${s.tasks.length}`;document.getElementById("bar").style.width=(n/s.tasks.length*100)+"%";document.getElementById("notes").value=notes[i];let list=document.getElementById("taskList");list.innerHTML="";s.tasks.forEach((t,j)=>{let row=document.createElement("div");row.className="task"+(done[i][j]?" done":"");let cb=document.createElement("input");cb.type="checkbox";cb.checked=done[i][j];cb.onchange=()=>{done[i][j]=cb.checked;render(i)};let label=document.createElement("label");let strong=document.createElement("strong");strong.textContent=t[0];label.appendChild(strong);if(t[1]){let em=document.createElement("em");em.textContent=t[1];label.appendChild(em)}row.append(cb,label);list.appendChild(row)})}
+document.getElementById("notes").oninput=e=>notes[active]=e.target.value;
+document.getElementById("reset").onclick=()=>{done[active]=done[active].map(()=>false);notes[active]="";render(active)};
+document.getElementById("next").onclick=()=>render((active+1)%steps.length);
+render(0);
+</script>
+<script>
+(function(){
+const stages=[
+{title:"Day 1 · Question content",tag:"Content",desc:"Create an educational question-format blog, website page, and social post for the selected lead pillar.",tasks:[
+["Create an educational blog in question format"],["Create the website page through KW Command Agent Sites"],["Post the content to social channels"],["Use Lead Magnet Blog & Socials GPT for creative content"]
+]},
+{title:"Day 3 · Answer content",tag:"Content",desc:"Publish the educational answer to the Day 1 question.",tasks:[
+["Create an educational blog answering the Day 1 question"],["Create the corresponding website page"],["Post the answer content to social channels"],["Keep the content aligned to the selected lead pillar"]
+]},
+{title:"Day 5 · Lead magnet campaign",tag:"Campaign",desc:"Send paid traffic to the lead magnet landing page.",tasks:[
+["Create or confirm the lead magnet landing page"],["Run the ad for 10 days to the lead magnet landing page"],["Run setup through Ads Optimizer GPT"],["Confirm the correct lead pillar and landing page are paired"]
+]},
+{title:"Lead capture & CRM",tag:"Lead capture",desc:"Review captured leads and route them into the relevant CRM nurture flow.",tasks:[
+["Review leads captured"],["Add leads to the tracker"],["Add leads to KW Command"],["Apply the appropriate lead pillar tag"],["Confirm the tag triggers the intended drip campaign"],["Review whether the drip campaign is working"]
+]},
+{title:"Campaign review",tag:"Review",desc:"Review lead results across the campaign cycle.",tasks:[
+["Review leads from the eight-week campaign"],["Check lead tagging and drip campaign routing"],["Identify leads who replied and endorse them to an agent"],["Review whether the current nurture sequence is working"]
+]}
+];
+let active=0,pillar="Buyers";
+const state={},notes={};
+function key(){return pillar+"::"+active}
+function ensure(){stages.forEach((s,i)=>{let k=pillar+"::"+i;if(!state[k])state[k]=s.tasks.map(()=>false);if(notes[k]===undefined)notes[k]=""})}
+const nav=document.getElementById("magnetNav"),select=document.getElementById("pillarSelect");
+stages.forEach((s,i)=>{let b=document.createElement("button");b.className="stepbtn";b.innerHTML=`${String(i+1).padStart(2,"0")} · ${s.title}<small>${s.tag}</small>`;b.onclick=()=>render(i);nav.appendChild(b)});
+function render(i){active=i;ensure();let s=stages[i],k=key(),done=state[k].filter(Boolean).length;document.querySelectorAll("#magnetNav .stepbtn").forEach((b,j)=>b.classList.toggle("active",i===j));document.getElementById("magnetTitle").textContent=s.title;document.getElementById("magnetPill").textContent=s.tag;document.getElementById("magnetDesc").textContent=s.desc;document.getElementById("magnetCount").textContent=`${done} / ${s.tasks.length}`;document.getElementById("magnetBar").style.width=(done/s.tasks.length*100)+"%";document.getElementById("magnetNotes").value=notes[k];let list=document.getElementById("magnetTasks");list.innerHTML="";s.tasks.forEach((t,j)=>{let row=document.createElement("div");row.className="task"+(state[k][j]?" done":"");let cb=document.createElement("input");cb.type="checkbox";cb.checked=state[k][j];cb.onchange=()=>{state[k][j]=cb.checked;render(i)};let label=document.createElement("label"),strong=document.createElement("strong");strong.textContent=t[0];label.appendChild(strong);row.append(cb,label);list.appendChild(row)})}
+select.addEventListener("change",()=>{pillar=select.value;active=0;ensure();render(0)});
+document.getElementById("magnetNotes").addEventListener("input",e=>{ensure();notes[key()]=e.target.value});
+document.getElementById("magnetReset").onclick=()=>{ensure();state[key()]=state[key()].map(()=>false);notes[key()]="";render(active)};
+document.getElementById("magnetNext").onclick=()=>render((active+1)%stages.length);
+ensure();render(0);
+})();
+</script>
+
+</body></html>
