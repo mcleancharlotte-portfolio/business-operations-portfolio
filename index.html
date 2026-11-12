@@ -1,101 +1,637 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Business operations portfolio showcasing workflow design, process standardization, marketing operations, and people operations.">
-<title>Business Operations Portfolio</title>
-<style>
-:root{--ink:#1f2933;--muted:#64727d;--paper:#fff;--bg:#f4f6f7;--navy:#1e3945;--teal:#477b80;--line:#e3e8eb;--pale:#eaf1f2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial}
-a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 24px}
-header{background:var(--navy);color:#fff;padding:72px 0 58px;position:relative;overflow:hidden}
-header:after{content:"";position:absolute;width:460px;height:460px;border:1px solid #ffffff20;border-radius:50%;right:-100px;top:-220px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:750;color:#b9d1d4}
-h1{font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.04em;max-width:780px;margin:17px 0}
-.intro{font-size:18px;color:#d9e5e7;max-width:700px;margin:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}.hero-tags span{border:1px solid #ffffff40;color:#eef5f5;border-radius:30px;padding:7px 12px;font-size:12px}
-nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.navinner{display:flex;gap:22px;align-items:center;min-height:54px;overflow:auto}
-nav a{text-decoration:none;color:#52616b;font-size:13px;font-weight:650;white-space:nowrap}
-main{padding:36px 0 60px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
-h2{font-size:26px;letter-spacing:-.025em;margin:0 0 5px}.lead{color:var(--muted);margin:0;max-width:720px}
-.about{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;margin-bottom:38px}
-.about p{margin:8px 0 0;color:#46545e;max-width:900px}
-.capabilities{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
-.cap{padding:15px;border-radius:12px;background:#f6f8f9;border:1px solid #edf0f2}
-.cap b{display:block;font-size:13px}.cap span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #1e293b10}
-.cardtop{padding:22px 22px 14px;background:linear-gradient(135deg,#edf3f4,#f9fbfb);border-bottom:1px solid var(--line)}
-.num{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:750;color:var(--teal)}
-h3{font-size:21px;line-height:1.2;margin:8px 0}.category{color:#597078;font-size:12px;font-weight:700}
-.cardbody{padding:18px 22px 22px;display:flex;flex-direction:column;flex:1}
-.cardbody p{color:var(--muted);font-size:14px;margin:0 0 14px}
-ul{padding-left:18px;margin:0 0 18px;color:#485660;font-size:13px}li{margin:5px 0}
-.link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--navy);color:#fff;padding:10px 14px;border-radius:9px;font-size:13px;font-weight:700;width:max-content;margin-top:auto}
-.link:hover{background:#315867}
-.note{background:#f0f5f5;border-left:3px solid var(--teal);padding:15px 17px;border-radius:0 10px 10px 0;color:#40525a;font-size:13px;margin-top:24px}
-.contact{margin-top:38px;background:var(--navy);color:#fff;border-radius:16px;padding:28px}
-.contact p{color:#d6e3e5;margin:6px 0 0}
-footer{color:#73818a;text-align:center;font-size:12px;padding:20px 0 32px}
-@media(max-width:760px){header{padding:54px 0 44px}.capabilities{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.section-head{display:block}.section-head .lead{margin-top:7px}}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Charlotte McLean's Business Operations Portfolio — workflow design, process improvement, and operational systems.">
+<title>Business Operations Portfolio | Charlotte McLean</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>html,body,button,input,textarea,select{font-family:'Google Sans Flex','Google Sans',Arial,sans-serif;}</style>
-<style id="google-sans-global">
-html, body, body * {
+
+<style>
+:root {
+  --ink: #202a30;
+  --muted: #687780;
+  --navy: #1e3945;
+  --teal: #477b80;
+  --bg: #f5f7f7;
+  --white: #ffffff;
+  --line: #e3e9eb;
+}
+
+* {
+  box-sizing: border-box;
   font-family: 'Google Sans Flex', 'Google Sans', Arial, sans-serif !important;
 }
-</style>
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 26px;
+}
+
+/* HERO */
+
+header {
+  background: var(--navy);
+  color: white;
+  padding: 64px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  right: -100px;
+  top: -220px;
+  box-shadow:
+    0 0 0 45px #ffffff08,
+    0 0 0 90px #ffffff06;
+  pointer-events: none;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  font-size: 12px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #c5d9dc;
+}
+
+.hero-label {
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #b9d1d4;
+}
+
+h1 {
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+  max-width: 800px;
+  margin: 16px 0 22px;
+}
+
+.intro {
+  font-size: 18px;
+  color: #d9e5e7;
+  max-width: 700px;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 19px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+.button-primary {
+  background: white;
+  color: var(--navy);
+}
+
+.button-primary:hover {
+  background: #eaf1f2;
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  color: white;
+  border: 1px solid #ffffff55;
+}
+
+.button-outline:hover {
+  background: #ffffff12;
+}
+
+/* MAIN CONTENT */
+
+main {
+  padding: 52px 0 65px;
+}
+
+section {
+  margin-bottom: 42px;
+}
+
+.section-label {
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 29px;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  margin: 0 0 10px;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 740px;
+  margin: 0;
+}
+
+/* INTRODUCTION */
+
+.about {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 32px;
+}
+
+.about p {
+  color: #4d5b63;
+  max-width: 900px;
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.capability {
+  background: #f6f8f9;
+  border: 1px solid #edf0f2;
+  border-radius: 12px;
+  padding: 17px;
+}
+
+.capability strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.capability span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PROJECTS */
+
+.projects-header {
+  margin-bottom: 22px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #1e293b10;
+}
+
+.card-top {
+  padding: 23px 23px 17px;
+  background: linear-gradient(135deg, #edf3f4, #f9fbfb);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-number {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-weight: 800;
+  color: var(--teal);
+}
+
+.category {
+  font-size: 11px;
+  color: #657a81;
+  font-weight: 700;
+  letter-spacing: .07em;
+  margin-top: 12px;
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 1.25;
+  margin: 7px 0;
+}
+
+.card-body {
+  padding: 20px 23px 23px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-body p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 15px;
+}
+
+ul {
+  padding-left: 19px;
+  margin: 0 0 22px;
+  color: #4d5b63;
+  font-size: 13px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: white;
+  padding: 11px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  width: max-content;
+  margin-top: auto;
+  transition: .2s;
+}
+
+.project-link:hover {
+  background: #315867;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--navy);
+  color: white;
+  border-radius: 17px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.contact p {
+  color: #d6e3e5;
+  margin: 7px 0 0;
+  max-width: 650px;
+}
+
+.contact .button {
+  flex-shrink: 0;
+}
+
+footer {
+  text-align: center;
+  color: #73818a;
+  font-size: 12px;
+  padding: 22px 0 32px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  header {
+    padding: 42px 0 52px;
+  }
+
+  .hero-top {
+    margin-bottom: 48px;
+    align-items: flex-start;
+  }
+
+  .capabilities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    display: block;
+  }
+
+  .contact .button {
+    margin-top: 20px;
+  }
+
+  .about {
+    padding: 23px;
+  }
+}
+
+@media (max-width: 420px) {
+  .capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-top {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
+
 <body>
-<header><div class="wrap">
-<div class="eyebrow">Selected work · Operations & systems</div>
-<h1>Business Operations<br>Portfolio</h1>
-<p class="intro">Designing practical systems that help teams work with greater clarity, consistency, and follow-through.</p>
-<div class="hero-tags"><span>Workflow Design</span><span>Process Standardization</span><span>Marketing Operations</span><span>People Operations</span></div>
-</div></header>
-<nav><div class="wrap navinner"><a href="about.html">About Me</a><a href="#about">Profile</a><a href="#work">Selected projects</a><a href="#capabilities">Capabilities</a><a href="#contact">Contact</a></div></nav>
+
+<header>
+  <div class="wrap">
+
+    <div class="hero-top">
+      <div class="brand">Charlotte McLean · Business Operations</div>
+      <div class="hero-label">Selected Work · 2026</div>
+    </div>
+
+    <div class="hero-label">Business Operations Portfolio</div>
+
+    <h1>Designing better systems.<br>Enabling better work.</h1>
+
+    <p class="intro">
+      I turn complex workflows into clear, repeatable systems
+      that help teams work with greater clarity, consistency,
+      and follow-through.
+    </p>
+
+    <div class="hero-actions">
+      <a href="about.html" class="button button-primary">
+        About Me ↗
+      </a>
+
+      <a href="#work" class="button button-outline">
+        Explore My Projects ↓
+      </a>
+    </div>
+
+  </div>
+</header>
+
 <main class="wrap">
-<section class="about" id="about">
-<div class="section-head"><div><div class="eyebrow" style="color:#477b80">Operating philosophy</div><h2>Turning work into repeatable systems</h2></div></div>
-<p>I approach operations by looking at how work moves across people, processes, tools, and handoffs. The projects below demonstrate how I translate working playbooks into structured workflows, practical checklists, and interactive resources that support consistent execution.</p>
-<p>These are process and enablement artifacts based on source playbooks. They are presented as demonstrations of workflow design and operational thinking, not as claims of quantified business impact.</p>
-<p style="margin-top:18px"><a class="link" href="about.html">Meet Charlotte →</a></p>
-<div class="capabilities" id="capabilities">
-<div class="cap"><b>Workflow architecture</b><span>Mapping stages, dependencies, and handoffs.</span></div>
-<div class="cap"><b>Process standardization</b><span>Making recurring work clear and repeatable.</span></div>
-<div class="cap"><b>Operational enablement</b><span>Turning instructions into usable team tools.</span></div>
-<div class="cap"><b>Execution oversight</b><span>Building in ownership, checkpoints, and follow-through.</span></div>
-</div>
-</section>
-<section id="work">
-<div class="section-head"><div><div class="eyebrow" style="color:#477b80">Selected work</div><h2>Operational systems in practice</h2><p class="lead">Three projects across people operations, transaction operations, and marketing operations.</p></div></div>
-<div class="projects">
-<article class="card">
-<div class="cardtop"><div class="num">Project 01</div><div class="category">PEOPLE OPERATIONS</div><h3>Intentional 1:1 Coaching Playbook</h3></div>
-<div class="cardbody"><p>A structured coaching framework designed to guide consistent one-to-one conversations, uncover friction, support co-solving, and turn discussions into measurable commitments.</p><ul><li>Structured coaching stages and prompts</li><li>Adaptive diagnostic questions and scenario support</li><li>Commitments, metrics, and follow-through</li></ul><a class="link" href="projects/coaching-playbook.html">Explore project <span>→</span></a></div>
-</article>
-<article class="card">
-<div class="cardtop"><div class="num">Project 02</div><div class="category">TRANSACTION OPERATIONS</div><h3>Listing Operations & Transaction Playbook</h3></div>
-<div class="cardbody"><p>A lifecycle-based workflow that coordinates property listing preparation, marketing, accepted offers, pending milestones, closing, and post-close follow-through.</p><ul><li>Stage-based task ownership and timelines</li><li>Listing and transaction document checklists</li><li>Closing milestones and buyer-cancellation procedure</li></ul><a class="link" href="projects/listing-operations.html">Explore project <span>→</span></a></div>
-</article>
-<article class="card">
-<div class="cardtop"><div class="num">Project 03</div><div class="category">MARKETING OPERATIONS</div><h3>Meta Ads & Lead Magnet System</h3></div>
-<div class="cardbody"><p>An integrated marketing workflow connecting educational content, paid campaign setup, lead capture, CRM tagging, and audience-specific nurture sequences.</p><ul><li>Campaign launch and performance review checklist</li><li>Four lead pillars and a repeatable content cycle</li><li>Lead routing and four audience-specific drip flows</li></ul><a class="link" href="projects/meta-ads-lead-magnet.html">Explore project <span>→</span></a></div>
-</article>
-</div>
-<div class="note">Each project opens as a standalone interactive demonstration. Some source workflows include external platform steps; the demos do not connect to live CRM, MLS, advertising, calendar, or messaging accounts.</div>
-</section>
-<section class="contact" id="contact">
-<div class="eyebrow">Let's connect</div><h2>Interested in building better operations?</h2>
-<p>I'm interested in opportunities where I can help teams create clarity, improve execution, and build scalable operating practices.</p>
-</section>
+
+  <!-- ABOUT / OPERATING PHILOSOPHY -->
+
+  <section class="about" id="about">
+
+    <div class="section-label">Operating Philosophy</div>
+
+    <h2>Turning work into repeatable systems.</h2>
+
+    <p>
+      I approach operations by looking at how work moves across
+      people, processes, tools, and handoffs. My work focuses on
+      translating existing processes into structured workflows,
+      practical checklists, and interactive resources that support
+      consistent execution.
+    </p>
+
+    <p>
+      Across people operations, transaction coordination, and
+      marketing operations, I focus on making responsibilities
+      visible, simplifying recurring work, and creating systems
+      that teams can actually use.
+    </p>
+
+    <div class="capabilities">
+
+      <div class="capability">
+        <strong>Workflow Architecture</strong>
+        <span>Mapping stages, dependencies, and handoffs.</span>
+      </div>
+
+      <div class="capability">
+        <strong>Process Standardization</strong>
+        <span>Making recurring work clear and repeatable.</span>
+      </div>
+
+      <div class="capability">
+        <strong>Operational Enablement</strong>
+        <span>Turning instructions into practical team tools.</span>
+      </div>
+
+      <div class="capability">
+        <strong>Execution Oversight</strong>
+        <span>Building in ownership, checkpoints, and follow-through.</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SELECTED PROJECTS -->
+
+  <section id="work">
+
+    <div class="projects-header">
+      <div class="section-label">Selected Work</div>
+      <h2>Operational systems in practice.</h2>
+      <p class="lead">
+        Three projects demonstrating how I approach process design,
+        team enablement, and operational execution.
+      </p>
+    </div>
+
+    <div class="projects">
+
+      <!-- PROJECT 1 -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <div class="project-number">Project 01</div>
+          <div class="category">PEOPLE OPERATIONS</div>
+          <h3>Intentional 1:1 Coaching Playbook</h3>
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            An interactive coaching framework designed to guide
+            consistent one-to-one conversations, uncover friction,
+            support co-solving, and turn discussions into measurable
+            commitments.
+          </p>
+
+          <ul>
+            <li>Structured coaching stages and prompts</li>
+            <li>Adaptive diagnostic questions</li>
+            <li>Objection handling and scenario support</li>
+            <li>Action planning and measurable follow-through</li>
+          </ul>
+
+          <a href="projects/coaching-playbook.html" class="project-link">
+            Explore Project →
+          </a>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <div class="project-number">Project 02</div>
+          <div class="category">TRANSACTION OPERATIONS</div>
+          <h3>Listing Operations & Transaction Playbook</h3>
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            A lifecycle-based workflow coordinating property listing
+            preparation, active marketing, accepted offers, pending
+            milestones, closing, and post-close follow-through.
+          </p>
+
+          <ul>
+            <li>Stage-based task ownership and timelines</li>
+            <li>Listing and transaction document checklists</li>
+            <li>Closing milestone tracking</li>
+            <li>Buyer cancellation procedure</li>
+          </ul>
+
+          <a href="projects/listing-operations.html" class="project-link">
+            Explore Project →
+          </a>
+
+        </div>
+      </article>
+
+      <!-- PROJECT 3 -->
+
+      <article class="card">
+
+        <div class="card-top">
+          <div class="project-number">Project 03</div>
+          <div class="category">MARKETING OPERATIONS</div>
+          <h3>Meta Ads & Lead Magnet System</h3>
+        </div>
+
+        <div class="card-body">
+
+          <p>
+            An integrated marketing workflow connecting educational
+            content, paid campaign setup, lead capture, CRM tagging,
+            and audience-specific nurture sequences.
+          </p>
+
+          <ul>
+            <li>Campaign launch and review checklist</li>
+            <li>Four lead pillars and content rotation</li>
+            <li>Lead capture and CRM routing</li>
+            <li>Four audience-specific drip flows</li>
+          </ul>
+
+          <a href="projects/meta-ads-lead-magnet.html" class="project-link">
+            Explore Project →
+          </a>
+
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div>
+      <div class="section-label" style="color:#b9d1d4">
+        Let's Connect
+      </div>
+
+      <h2>Interested in building better operations?</h2>
+
+      <p>
+        I'm open to conversations about business operations,
+        process improvement, and team enablement opportunities.
+      </p>
+    </div>
+
+    <a href="mailto:mclean.d.charlotte@gmail.com"
+       class="button button-primary">
+      Get in Touch ↗
+    </a>
+
+  </section>
+
 </main>
-<footer><div class="wrap">Business Operations Portfolio · Selected workflow and process design projects</div></footer>
-</body></html>
+
+<footer>
+  <div class="wrap">
+    Charlotte McLean · Business Operations Portfolio
+  </div>
+</footer>
+
+</body>
+</html>
